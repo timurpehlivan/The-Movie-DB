@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/listFragment">
+
+  <fragment
+      android:id="@+id/listFragment"
+      android:name="com.timurpehlivan.themoviedb.presentation.movielist.MovieListFragment"
+      android:label="@string/app_name"
+      tools:layout="@layout/fragment_movie_list">
+    <action
+        android:id="@+id/action_listFragment_to_movieDetailsFragment"
+        app:destination="@id/movieDetailsFragment" />
+  </fragment>
+
+  <fragment
+      android:id="@+id/movieDetailsFragment"
+      android:name="com.timurpehlivan.themoviedb.presentation.moviedetails.MovieDetailsFragment"
+      android:label="{title}"
+      tools:layout="@layout/fragment_movie_details">
+    <argument
+        android:name="movie"
+        app:argType="com.timurpehlivan.themoviedb.domain.model.Movie" />
+    <argument
+        android:name="title"
+        app:argType="string" />
+    <action
+        android:id="@+id/action_movieDetailsFragment_self"
+        app:destination="@id/movieDetailsFragment" />
+  </fragment>
+</navigation>

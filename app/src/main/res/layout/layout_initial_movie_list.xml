@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@color/main_background_color">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/coming_soon_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/upcoming_title"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+        android:textColor="@android:color/white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/upcoming_movie_list_recycler_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/coming_soon_title"
+        tools:listitem="@layout/item_movie_list" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/spacing_tiniest"
+        android:layout_margin="@dimen/spacing_small"
+        android:background="@color/yellow_500"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/upcoming_movie_list_recycler_view" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/latest_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_normal"
+        android:text="@string/top_rated_title"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+        android:textColor="@android:color/white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/upcoming_movie_list_recycler_view" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/latest_movie_list_recycler_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/latest_title"
+        tools:listitem="@layout/item_movie_list" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/spacing_tiniest"
+        android:layout_margin="@dimen/spacing_small"
+        android:background="@color/yellow_500"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/latest_movie_list_recycler_view" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/popular_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_normal"
+        android:text="@string/popular_title"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+        android:textColor="@android:color/white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/latest_movie_list_recycler_view" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/popular_movie_list_recycler_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/popular_title"
+        tools:listitem="@layout/item_movie_list" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/spacing_tiniest"
+        android:layout_margin="@dimen/spacing_small"
+        android:background="@color/yellow_500"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/popular_movie_list_recycler_view" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
